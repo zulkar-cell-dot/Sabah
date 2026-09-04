@@ -1,0 +1,868 @@
+/* ==================================================
+   GLOBAL
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5faf7;
+    color: #18352c;
+    line-height: 1.7;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.header {
+    width: 100%;
+    padding: 15px 7%;
+    background: rgba(255,255,255,0.96);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 4px 20px rgba(0,0,0,0.08);
+}
+
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #116149;
+}
+
+
+.logo span {
+    color: #25a879;
+}
+
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #31554a;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    transition: 0.3s;
+
+    font-weight: 600;
+}
+
+
+nav a:hover,
+nav a.active {
+
+    background: #159a78;
+    color: white;
+
+}
+
+
+.menu-button {
+    display: none;
+
+    border: none;
+    background: #159a78;
+
+    color: white;
+
+    padding: 9px 13px;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* ==================================================
+   BANNER
+================================================== */
+
+.banner {
+
+    min-height: 600px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 80px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4,40,29,0.90),
+            rgba(4,40,29,0.35)
+        ),
+        radial-gradient(
+            circle at 75% 30%,
+            #55c9a1,
+            #12654e 50%,
+            #062f24
+        );
+
+    color: white;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.banner::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    right: -100px;
+    bottom: -180px;
+
+}
+
+
+.banner-content {
+    max-width: 650px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.small-title {
+
+    letter-spacing: 5px;
+
+    font-size: 14px;
+
+    color: #a8ead1;
+
+    margin-bottom: 15px;
+
+}
+
+
+.banner h1 {
+
+    font-size: clamp(45px, 7vw, 85px);
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+
+}
+
+
+.banner p {
+
+    font-size: 18px;
+
+    max-width: 600px;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* ==================================================
+   BUTTON
+================================================== */
+
+.button {
+
+    display: inline-block;
+
+    background: #25a879;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 13px 25px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+
+.button:hover {
+
+    background: #0c7557;
+
+    transform: translateY(-3px);
+
+}
+
+
+/* ==================================================
+   PAGE BANNER
+================================================== */
+
+.page-banner {
+
+    padding: 90px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0c5743,
+            #2db88b
+        );
+
+    color: white;
+
+}
+
+
+.page-banner h1 {
+
+    font-size: 55px;
+
+    line-height: 1.1;
+
+    margin: 10px 0;
+
+}
+
+
+.page-banner p {
+
+    color: #b8efdc;
+
+    letter-spacing: 4px;
+
+}
+
+
+/* ==================================================
+   SECTION
+================================================== */
+
+.section {
+
+    padding: 80px 8%;
+
+}
+
+
+.section.light {
+
+    background: #eaf5f0;
+
+}
+
+
+.section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.section-title span {
+
+    color: #159a78;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+}
+
+
+.section-title h2 {
+
+    font-size: 36px;
+
+}
+
+
+.intro {
+
+    max-width: 850px;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* ==================================================
+   PURPOSE
+================================================== */
+
+.purpose {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr;
+
+    gap: 40px;
+
+}
+
+
+.purpose-text p {
+
+    margin-bottom: 20px;
+
+}
+
+
+.info-box {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.07);
+
+}
+
+
+.info-box h3 {
+
+    margin-bottom: 15px;
+
+}
+
+
+.info-box li {
+
+    list-style: none;
+
+    margin: 12px 0;
+
+}
+
+
+.info-box li::before {
+
+    content: "✓ ";
+
+    color: #159a78;
+
+    font-weight: bold;
+
+}
+
+
+/* ==================================================
+   CARDS
+================================================== */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.card {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.06);
+
+    transition: 0.3s;
+
+}
+
+
+.card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+.card-icon {
+
+    font-size: 42px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.card h3 {
+
+    margin-bottom: 10px;
+
+}
+
+
+/* ==================================================
+   VIDEO
+================================================== */
+
+.video-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+
+}
+
+
+.video-card {
+
+    background: white;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.08);
+
+}
+
+
+.video {
+
+    position: relative;
+
+    padding-top: 56.25%;
+
+}
+
+
+.video iframe {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+
+}
+
+
+.video-content {
+
+    padding: 25px;
+
+}
+
+
+.number {
+
+    color: #159a78;
+
+    font-weight: bold;
+
+}
+
+
+.video-content h2 {
+
+    margin: 8px 0 10px;
+
+}
+
+
+/* ==================================================
+   MAP
+================================================== */
+
+.map-container {
+
+    width: 100%;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.12);
+
+    margin-top: 30px;
+
+}
+
+
+.map-container iframe {
+
+    display: block;
+
+}
+
+
+.location-info {
+
+    background: white;
+
+    padding: 30px;
+
+    margin-top: 25px;
+
+    border-radius: 20px;
+
+}
+
+
+/* ==================================================
+   REFERENCES
+================================================== */
+
+.reference-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+
+}
+
+
+.reference-card {
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.07);
+
+}
+
+
+.reference-icon {
+
+    font-size: 45px;
+
+}
+
+
+.reference-card h3 {
+
+    margin: 15px 0;
+
+    font-size: 25px;
+
+}
+
+
+.reference-button {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 11px 20px;
+
+    border-radius: 25px;
+
+    background: #159a78;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+}
+
+
+/* ==================================================
+   EXPLORE
+================================================== */
+
+.explore {
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d5945,
+            #159a78
+        );
+
+    color: white;
+
+}
+
+
+.explore h2 {
+
+    font-size: 36px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.explore p {
+
+    margin-bottom: 25px;
+
+}
+
+
+/* ==================================================
+   MUSIC BUTTON
+================================================== */
+
+.music-button {
+
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #159a78;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 2000;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.2);
+
+}
+
+
+.music-button:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+
+    background: #092e25;
+
+    color: #b9d6cc;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    font-size: 14px;
+
+}
+
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media(max-width: 900px) {
+
+    .cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .purpose {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .video-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media(max-width: 700px) {
+
+    .header {
+
+        padding: 15px 5%;
+
+    }
+
+
+    .menu-button {
+
+        display: block;
+
+    }
+
+
+    nav {
+
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+
+        left: 5%;
+
+        right: 5%;
+
+        background: white;
+
+        padding: 15px;
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 10px 30px rgba(0,0,0,0.1);
+
+        flex-direction: column;
+
+    }
+
+
+    nav.show {
+
+        display: flex;
+
+    }
+
+
+    nav a {
+
+        width: 100%;
+
+    }
+
+
+    .banner {
+
+        min-height: 520px;
+
+        padding: 60px 7%;
+
+    }
+
+
+    .page-banner h1 {
+
+        font-size: 42px;
+
+    }
+
+
+    .section {
+
+        padding: 55px 6%;
+
+    }
+
+
+    .section-title h2 {
+
+        font-size: 28px;
+
+    }
+
+
+    .cards {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .reference-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
